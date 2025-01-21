@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-class User extends Authenticatable
+class Admin extends Authenticatable
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -46,13 +46,13 @@ class User extends Authenticatable
         ];
     }
 
-    public function userDetails()
+    public function adminDetails()
     {
-        return $this->hasOne(UserDetail::class, 'user_id');
+        return $this->hasOne(AdminDetails::class, 'admin_id');
     }
 
-    public function donations()
+    public function charities()
     {
-        return $this->hasMany(Donation::class, 'user_id');
+        return $this->hasMany(Charity::class, 'admin_id');
     }
 }
