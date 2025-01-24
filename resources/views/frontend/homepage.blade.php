@@ -35,8 +35,10 @@
                             data-endspeed="1200" data-endeasing="Power4.easeIn"
                             style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">
                             <div class="grey-title">
-                                <p>Pellentesque eu malesuada nisi. Phasellus eget ornare arcu, et condimen tum lorem
-                                    ipsem<br>vitae posuere nisi, at venenatis velit. Morbi lacinia lac us accumsan
+                                <p>At HeartFund, we believe in the power of compassion and collective effort. <br>Our
+                                    mission is to extend a helping hand to those in need, empowering communities and
+                                    changing lives for the better. <br>Together, we can create a brighter future for
+                                    everyone.
                                 <p>
                             </div>
                         </div>
@@ -78,9 +80,10 @@
                             data-endelementdelay="0.3" data-endspeed="1200" data-endeasing="Power4.easeIn"
                             style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">
                             <div class="grey-title">
-                                <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium
-                                    doloremque la<br>
-                                    udantium, totam rem aperiam eaque ipsa, quae ab illo inventore
+                                <p>At HeartFund, we believe in the power of compassion and collective effort. <br>Our
+                                    mission is to extend a helping hand to those in need, empowering communities and
+                                    changing lives for the better. <br>Together, we can create a brighter future for
+                                    everyone.
                                 <p>
                             </div>
                         </div>
@@ -90,43 +93,6 @@
                             data-endelementdelay="0.3" data-endspeed="1200" data-endeasing="Power4.easeIn"
                             style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">
                             <div class="grey-title"><a href="#" class="btn-3">Donate now</a></div>
-                        </div>
-                        <div class="tp-caption lfr tp-resizeme" data-x="center" data-hoffset="0" data-y="center"
-                            data-voffset="400" data-speed="1500" data-start="500" data-easing="easeOutExpo"
-                            data-splitin="none" data-splitout="none" data-elementdelay="0.01"
-                            data-endelementdelay="0.3" data-endspeed="1200" data-endeasing="Power4.easeIn"
-                            style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">
-                            <div class="container">
-                                <div class="slider-box wow fadeInUp animated">
-                                    <div class="slider-item bor">
-                                        <img src="images/resources/1.png" alt="Images">
-                                        <div class="text">
-                                            <h4>Become a donator</h4>
-                                            <p>Duis sed odio sit amet nibh vulpuo<br> ipsuy veli. </p>
-                                            <a href="#">donate now <i class="fa fa-angle-right"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="slider-item bor">
-                                        <img src="images/resources/2.png" alt="Images">
-                                        <div class="text">
-                                            <h4>Become a donator</h4>
-                                            <p>Duis sed odio sit amet nibh vulpuo<br> ipsuy veli. </p>
-                                            <a href="#">donate now <i class="fa fa-angle-right"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="slider-item">
-                                        <img src="images/resources/3.png" alt="Images">
-                                        <div class="text">
-                                            <h4>Become a donator</h4>
-                                            <p>Duis sed odio sit amet nibh vulpuo<br> ipsuy veli. </p>
-                                            <a href="#">donate now <i class="fa fa-angle-right"
-                                                    aria-hidden="true"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
 
                     </li>
@@ -161,9 +127,10 @@
                             data-endelementdelay="0.3" data-endspeed="1200" data-endeasing="Power4.easeIn"
                             style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">
                             <div class="grey-title">
-                                <p>Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium
-                                    doloremque la<br>
-                                    udantium, totam rem aperiam eaque ipsa, quae ab illo inventore
+                                <p>At HeartFund, we believe in the power of compassion and collective effort. <br>Our
+                                    mission is to extend a helping hand to those in need, empowering communities and
+                                    changing lives for the better. <br>Together, we can create a brighter future for
+                                    everyone.
                                 <p>
                             </div>
                         </div>
@@ -174,30 +141,7 @@
                             style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">
                             <div class="grey-title"><a href="#" class="btn-3">Donate now</a></div>
                         </div>
-                        <div class="tp-caption lfr tp-resizeme" data-x="center" data-hoffset="0" data-y="center"
-                            data-voffset="400" data-speed="1500" data-start="500" data-easing="easeOutExpo"
-                            data-splitin="none" data-splitout="none" data-elementdelay="0.01"
-                            data-endelementdelay="0.3" data-endspeed="1200" data-endeasing="Power4.easeIn"
-                            style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">
-                            <div class="container">
-                                <div class="slider-bar wow fadeInUp animated">
-                                    <div class="img-box">
-                                        <h4>12</h4>
-                                        <p>February,17</p>
-                                    </div>
-                                    <div class="text">
-                                        <h4>Syrian<span>child needs foor<br>
-                                                for their</span> Existance</h4>
-                                    </div>
-                                    <div class="counter-side">
-                                        <div class="inner-box">
-                                            <div id="countdown-timer" class="countdown"></div>
-                                        </div>
-                                    </div>
-                                    <a href="#" class="btn-3">Donate today</a>
-                                </div>
-                            </div>
-                        </div>
+
                     </li>
                 </ul>
                 <div class="tp-bannertimer"></div>
@@ -217,8 +161,8 @@
                     <div class="item">
                         <div class="text">
                             <h2>01. donator</h2>
-                            <p>Pellentesque eu malesuada nisi as<br>
-                                et condimen tum lorem.</p>
+                            <p>Our mission is to extend a helping hand to those in need,
+                                changing lives for the better.</p>
                             <a href="{{ route('register') }}">Donate Now</a>
                         </div>
                     </div>
@@ -229,8 +173,8 @@
                     <div class="item current">
                         <div class="text">
                             <h2>02. volunteer</h2>
-                            <p>Pellentesque eu malesuada nisi as<br>
-                                et condimen tum lorem.</p>
+                            <p>Our mission is to extend a helping hand to those in need,
+                                changing lives for the better.</p>
                             <a href="{{ route('register') }}">join Now</a>
                         </div>
                     </div>
@@ -241,8 +185,8 @@
                     <div class="item">
                         <div class="text">
                             <h2>03. fundraise</h2>
-                            <p>Pellentesque eu malesuada nisi as<br>
-                                et condimen tum lorem.</p>
+                            <p>Our mission is to extend a helping hand to those in need,
+                                changing lives for the better.</p>
                             <a href="{{ route('register') }}">Donate Now</a>
                         </div>
                     </div>
@@ -259,154 +203,56 @@
             <div class="text-center section-title">
                 <h6>HELP to THE poor People</h6>
                 <h2>Recent <span>Causes</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+                <p>At HeartFund, we believe in the power of compassion and collective effort. <br>Our
+                    mission is to extend a helping hand to those in need, empowering communities and
+                    changing lives for the better. <br>Together, we can create a brighter future for
+                    everyone.</p>
             </div>
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <!-- Start single-item -->
-                    <div class="welcome-item">
-                        <div class="img-holder">
-                            <figure><a href="single-causes.html"><img src="images/blog/1.jpg" alt="Images"></a>
-                            </figure>
-                            <!-- Start overlay -->
-                            <div class="overlay">
-                                <h4><a href="single-causes.html">Help to reach <span>food!</span></a></h4>
+                @foreach ($campaigns as $campaign)
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <!-- Start single-item -->
+                        <div class="welcome-item">
+                            <div class="img-holder">
+                                <figure><a href="{{ route('campaign.detail', $campaign->id) }}"><img
+                                            src="{{ asset($campaign->charity->logo) }}" alt="Images"></a>
+                                </figure>
+                                <!-- Start overlay -->
+                                <div class="overlay">
+                                    <h4><a href="campaign.detail">Help to reach <span>food!</span></a></h4>
+                                </div>
+                                <!-- End overlay -->
                             </div>
-                            <!-- End overlay -->
-                        </div>
-                        <div class="text">
-                            <div class="pro-text">
-                                <h4>$44,210</h4>
-                                <p>Raised of <span>$99,541</span></p>
-                            </div>
-                            <!--.progress-item -->
-                            <div class="causes-progress">
-                                <div class="progress-item">
-                                    <div class="progress" data-value="35">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100"
-                                            aria-valuemin="0" aria-valuemax="100">
-                                            <div class="value-holder"><span class="value">30</span></div>
+                            <div class="text">
+                                <div class="pro-text">
+                                    <h4>{{ $campaign->raised_amt }}</h4><br>
+                                    <p>Raised of <span>{{ $campaign->goal_amt }}</span></p>
+                                </div>
+                                <!--.progress-item -->
+                                @php
+                                    $percentage = ($campaign->raised_amt / $campaign->goal_amt) * 100;
+                                @endphp
+                                <div class="causes-progress">
+                                    <div class="progress-item">
+                                        <div class="progress" data-value="{{ $percentage }}">
+                                            <div class="progress-bar" role="progressbar" aria-valuenow="100"
+                                                aria-valuemin="0" aria-valuemax="100">
+                                                <div class="value-holder"><span
+                                                        class="value">{{ $percentage }}</span></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- /progress-item -->
+                                <h4 style="padding-top: 20px;">{{ $campaign->title }}</a>
+                                    </h3>
+                                    <p>{{ $campaign->description }}</p>
+                                    <a href="{{ route('campaign.detail', $campaign->id) }}">Donate now</a>
                             </div>
-                            <!-- /progress-item -->
-                            <p>Lorum ipsum iure reprhe pu nderit
-                                sit amet, consectetur neque.</p>
-                            <a href="#">Donate now</a>
                         </div>
+                        <!-- End single-item -->
                     </div>
-                    <!-- End single-item -->
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <!-- Start single-item -->
-                    <div class="welcome-item">
-                        <div class="img-holder">
-                            <figure><a href="single-causes.html"><img src="images/blog/2.jpg" alt="Images"></a>
-                            </figure>
-                            <!-- Start overlay -->
-                            <div class="overlay">
-                                <h4><a href="single-causes.html">Help to reach <span>food!</span></a></h4>
-                            </div>
-                            <!-- End overlay -->
-                        </div>
-                        <div class="text">
-                            <div class="pro-text">
-                                <h4>$44,210</h4>
-                                <p>Raised of <span>$99,541</span></p>
-                            </div>
-                            <!--.progress-item -->
-                            <div class="causes-progress">
-                                <div class="progress-item">
-                                    <div class="progress" data-value="50">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100"
-                                            aria-valuemin="0" aria-valuemax="100">
-                                            <div class="value-holder"><span class="value">50</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /progress-item -->
-                            <p>Lorum ipsum iure reprhe pu nderit
-                                sit amet, consectetur neque.</p>
-                            <a href="#">Donate now</a>
-                        </div>
-                    </div>
-                    <!-- End single-item -->
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <!-- Start single-item -->
-                    <div class="welcome-item">
-                        <div class="img-holder">
-                            <figure><a href="single-causes.html"><img src="images/blog/3.jpg" alt="Images"></a>
-                            </figure>
-                            <!-- Start overlay -->
-                            <div class="overlay">
-                                <h4><a href="single-causes.html">Help to reach <span>food!</span></a></h4>
-                            </div>
-                            <!-- End overlay -->
-                        </div>
-                        <div class="text">
-                            <div class="pro-text">
-                                <h4>$44,210</h4>
-                                <p>Raised of <span>$99,541</span></p>
-                            </div>
-                            <!--.progress-item -->
-                            <div class="causes-progress">
-                                <div class="progress-item">
-                                    <div class="progress" data-value="35">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100"
-                                            aria-valuemin="0" aria-valuemax="100">
-                                            <div class="value-holder"><span class="value">30</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /progress-item -->
-                            <p>Lorum ipsum iure reprhe pu nderit
-                                sit amet, consectetur neque.</p>
-                            <a href="#">Donate now</a>
-                        </div>
-                    </div>
-                    <!-- End single-item -->
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <!-- Start single-item -->
-                    <div class="welcome-item">
-                        <div class="img-holder">
-                            <figure><a href="single-causes.html"><img src="images/blog/4.jpg" alt="Images"></a>
-                            </figure>
-                            <!-- Start overlay -->
-                            <div class="overlay">
-                                <h4><a href="single-causes.html">Help to reach <span>food!</span></a></h4>
-                            </div>
-                            <!-- End overlay -->
-                        </div>
-                        <div class="text">
-                            <div class="pro-text">
-                                <h4>$44,210</h4>
-                                <p>Raised of <span>$99,541</span></p>
-                            </div>
-                            <!--.progress-item -->
-                            <div class="causes-progress">
-                                <div class="progress-item">
-                                    <div class="progress" data-value="70">
-                                        <div class="progress-bar" role="progressbar" aria-valuenow="100"
-                                            aria-valuemin="0" aria-valuemax="100">
-                                            <div class="value-holder"><span class="value">70</span></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /progress-item -->
-                            <p>Lorum ipsum iure reprhe pu nderit
-                                sit amet, consectetur neque.</p>
-                            <a href="#">Donate now</a>
-                        </div>
-                    </div>
-                    <!-- End single-item -->
-                </div>
+                @endforeach
             </div>
         </div>
     </section>

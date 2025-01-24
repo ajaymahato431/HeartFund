@@ -21,3 +21,5 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 Route::get('/', [HomepageController::class, 'index'])->name('index');
+
+Route::get('/campaign/{id}', [HomepageController::class, 'index'])->name('campaign.detail');

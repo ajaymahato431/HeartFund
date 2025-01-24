@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Campaign;
 use Illuminate\Http\Request;
 
 class HomepageController extends Controller
 {
     public function index()
     {
-        return view('frontend.homepage');
+        $campaigns = Campaign::where('status', 'active')->get();
+        return view('frontend.homepage', compact('campaigns'));
     }
 }
