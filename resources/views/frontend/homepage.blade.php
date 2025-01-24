@@ -215,7 +215,7 @@
                         <div class="welcome-item">
                             <div class="img-holder">
                                 <figure><a href="{{ route('campaign.detail', $campaign->id) }}"><img
-                                            src="{{ asset($campaign->charity->logo) }}" alt="Images"></a>
+                                            src="{{ Storage::url($campaign->charity->logo) }}" alt="Images"></a>
                                 </figure>
                                 <!-- Start overlay -->
                                 <div class="overlay">
@@ -314,143 +314,52 @@
         <div class="container">
             <div class="text-center section-title">
                 <h2>dadicated <span>team</span></h2>
-                <p>Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan<br>
-                    ipsuy veli. Nam nec tellus a odio tincidunt auctor </p>
+                <p>Our team is committed to making a difference through hard work and unwavering dedication. <br>With
+                    diverse expertise and a shared passion for helping others, we strive to bring positive change to
+                    the<br>
+                    lives of those we serve. Together, we work tirelessly to transform challenges into opportunities.
+                </p>
             </div>
             <div class="row">
                 <div class="teamcarosule">
-                    <div class="team-item">
-                        <!-- Start single-item -->
-                        <div class="single-item wow fadeInUp">
-                            <div class="img-holder">
-                                <figure><a href="team.html"><img src="images/team/1.jpg" alt="Images"></a></figure>
-                                <!-- Start overlay -->
-                                <div class="overlay">
-                                    <div class="link-icon">
-                                        <ul class="link">
-                                            <li>
-                                                <a href="#"><i class="fa fa-facebook"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-dribbble"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-twitter"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
+                    @foreach ($volunteers as $volunteer)
+                        <div class="team-item">
+                            <!-- Start single-item -->
+                            <div class="single-item wow fadeInUp">
+                                <div class="img-holder">
+                                    <figure><a href="#"><img src="{{ Storage::url($volunteer->profile_img) }}"
+                                                alt="Images"></a>
+                                    </figure>
+                                    <!-- Start overlay -->
+                                    <div class="overlay">
+                                        <div class="link-icon">
+                                            <ul class="link">
+                                                <li>
+                                                    <a href="{{ $volunteer->facebook }}"><i class="fa fa-facebook"
+                                                            aria-hidden="true"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ $volunteer->insta }}"><i class="fa fa-instagram"
+                                                            aria-hidden="true"></i></a>
+                                                </li>
+                                                <li>
+                                                    <a href="{{ $volunteer->linkedin }}"><i class="fa fa-linkedin"
+                                                            aria-hidden="true"></i></a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
+                                    <!-- End overlay -->
                                 </div>
-                                <!-- End overlay -->
-                            </div>
-                            <div class="text">
-                                <h4><a href="team.html">Alina Martin</a></h4>
-                                <p>volunteer</p>
-                            </div>
-                        </div>
-                        <!-- End single-item -->
-                    </div>
-                    <div class="team-item">
-                        <!-- Start single-item -->
-                        <div class="single-item wow fadeInUp">
-                            <div class="img-holder">
-                                <figure><a href="team.html"><img src="images/team/2.jpg" alt="Images"></a></figure>
-                                <!-- Start overlay -->
-                                <div class="overlay">
-                                    <div class="link-icon">
-                                        <ul class="link">
-                                            <li>
-                                                <a href="#"><i class="fa fa-facebook"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-dribbble"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-twitter"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <div class="text">
+                                    <h4><a href="#">{{ $volunteer->name }}</a></h4>
+                                    <p>volunteer</p>
                                 </div>
-                                <!-- End overlay -->
                             </div>
-                            <div class="text">
-                                <h4><a href="team.html">Rina jho</a></h4>
-                                <p>volunteer</p>
-                            </div>
+                            <!-- End single-item -->
                         </div>
-                        <!-- End single-item -->
-                    </div>
-                    <div class="team-item">
-                        <!-- Start single-item -->
-                        <div class="single-item wow fadeInUp">
-                            <div class="img-holder">
-                                <figure><a href="team.html"><img src="images/team/3.jpg" alt="Images"></a></figure>
-                                <!-- Start overlay -->
-                                <div class="overlay">
-                                    <div class="link-icon">
-                                        <ul class="link">
-                                            <li>
-                                                <a href="#"><i class="fa fa-facebook"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-dribbble"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-twitter"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- End overlay -->
-                            </div>
-                            <div class="text">
-                                <h4><a href="team.html">james powel</a></h4>
-                                <p>volunteer</p>
-                            </div>
-                        </div>
-                        <!-- End single-item -->
-                    </div>
-                    <div class="team-item">
-                        <!-- Start single-item -->
-                        <div class="single-item wow fadeInUp">
-                            <div class="img-holder">
-                                <figure><a href="team.html"><img src="images/team/4.jpg" alt="Images"></a></figure>
-                                <!-- Start overlay -->
-                                <div class="overlay">
-                                    <div class="link-icon">
-                                        <ul class="link">
-                                            <li>
-                                                <a href="#"><i class="fa fa-facebook"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-dribbble"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                            <li>
-                                                <a href="#"><i class="fa fa-twitter"
-                                                        aria-hidden="true"></i></a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- End overlay -->
-                            </div>
-                            <div class="text">
-                                <h4><a href="team.html">natalia alex</a></h4>
-                                <p>volunteer</p>
-                            </div>
-                        </div>
-                        <!-- End single-item -->
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </div>
@@ -461,18 +370,14 @@
         <div class="container">
             <div class="section-title">
                 <h2>Our<span>Donator</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor<br>
-                    incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                <p>Our donors fuel our mission with their generosity, enabling us to uplift communities <br>and create
+                    lasting positive change. Together, we bring hope and make a difference.</p>
             </div>
             <div class="row">
                 <div class="col-md-6 col-sm-6">
                     <div class="item-left">
                         <div class="text">
                             <h4>Join Our Campaign to become <span>Donator:</span></h4>
-                        </div>
-                        <div class="pro-text">
-                            <h4>$44,210</h4>
-                            <p>Raised of <span>$99,541</span></p>
                         </div>
                         <!--.progress-item -->
                         <div class="causes-progress">
@@ -498,20 +403,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 col-sm-6">
-                                <div class="donator">
-                                    <div class="img-holder">
-                                        <figure><img src="images/blog/4.png" alt="Images"></figure>
-                                    </div>
-                                    <div class="text">
-                                        <h4>dAVID BROWN</h4>
-                                        <p>Donator</p>
-                                        <h5>Donated : <span> $115.00</span></h5>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                        <a href="#" class="btn-2">Donate now</a>
+                        <a href="#" class="btn-2">View all</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 winning">
@@ -519,9 +412,13 @@
                         <div class="text">
                             <h2>WE HELP many people</h2>
                             <h4>want to become a <span>volunteer!</span></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                incididun<br>
-                                labore dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                            <p>Our team is committed to making a difference through hard work and unwavering dedication.
+                                <br>With
+                                diverse expertise and a shared passion for helping others, we strive to bring positive
+                                change to
+                                the<br>
+                                lives of those we serve. Together, we work tirelessly to transform challenges into
+                                opportunities.
                             </p>
                             <a href="#" class="btn-3">Apply now</a>
                         </div>
