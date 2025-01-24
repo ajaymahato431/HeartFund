@@ -10,6 +10,12 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
+use Filament\Forms\Components\DateTimePicker;
+use Filament\Forms\Components\Fieldset;
+use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\Section;
+use Filament\Forms\Components\TextInput;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 
@@ -17,24 +23,75 @@ class UserResource extends Resource
 {
     protected static ?string $model = User::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-users';
+
+    protected static ?string $navigationGroup = 'User Settings';
+
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('name')
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\TextInput::make('email')
-                    ->email()
-                    ->required()
-                    ->maxLength(255),
-                Forms\Components\DateTimePicker::make('email_verified_at'),
-                Forms\Components\TextInput::make('password')
-                    ->password()
-                    ->required()
-                    ->maxLength(255),
+                Section::make('User Information')
+                    ->schema([
+                        Fieldset::make('Account Details')
+                            ->schema([
+                                TextInput::make('name')
+                                    ->label('Full Name')
+                                    ->required()
+                                    ->maxLength(255),
+
+                                TextInput::make('email')
+                                    ->email()
+                                    ->required()
+                                    ->maxLength(255),
+
+                                DateTimePicker::make('email_verified_at')
+                                    ->label('Email Verified At'),
+
+                                TextInput::make('password')
+                                    ->password()
+                                    ->hiddenOn('edit')
+                                    ->required()
+                                    ->maxLength(255),
+                            ]),
+                    ]),
+
+                Section::make('Personal Details')
+                    ->schema([
+                        Repeater::make('user_details')
+                            ->relationship('userDetails')
+                            ->label('')
+                            ->schema([
+                                TextInput::make('phone')
+                                    ->label('Phone')
+                                    ->maxLength(15)
+                                    ->nullable(),
+
+                                TextInput::make('address')
+                                    ->label('Address')
+                                    ->nullable(),
+
+                                TextInput::make('country')
+                                    ->label('Country')
+                                    ->nullable(),
+
+                                TextInput::make('blood_group')
+                                    ->label('Blood Group')
+                                    ->nullable(),
+
+                                FileUpload::make('profile_img')
+                                    ->label('Profile Image')
+                                    ->ImageEditor()
+                                    ->nullable(),
+                            ])
+                            ->defaultItems(1)
+                            ->columns(3)
+                            ->columnSpanFull()
+                            ->deletable(false)
+                            ->disableItemCreation(),
+                    ]),
             ]);
     }
 
@@ -46,9 +103,13 @@ class UserResource extends Resource
                     ->searchable(),
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('email_verified_at')
-                    ->dateTime()
-                    ->sortable(),
+                Tables\Columns\TextColumn::make('phone')
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('address')
+                    ->limit(50)
+                    ->searchable(),
+                Tables\Columns\TextColumn::make('country')
+                    ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

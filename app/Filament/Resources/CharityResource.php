@@ -12,12 +12,17 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Auth;
 
 class CharityResource extends Resource
 {
     protected static ?string $model = Charity::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-banknotes';
+
+    protected static ?string $navigationGroup = 'Charity';
+
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
@@ -25,13 +30,11 @@ class CharityResource extends Resource
             ->schema([
                 Forms\Components\TextInput::make('name')
                     ->required()
+                    ->columnSpanFull()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('description')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('logo')
-                    ->maxLength(255)
-                    ->default(null),
                 Forms\Components\TextInput::make('contact_email')
                     ->email()
                     ->required()
@@ -43,9 +46,20 @@ class CharityResource extends Resource
                 Forms\Components\TextInput::make('website_url')
                     ->maxLength(255)
                     ->default(null),
-                Forms\Components\TextInput::make('status')
+                Forms\Components\Select::make('status')
+                    ->default('active')
+                    ->options([
+                        'active' => 'Active',
+                        'inactive' => 'Inactive'
+                    ])
                     ->required(),
+                Forms\Components\FileUpload::make('logo')
+                    ->ImageEditor()
+                    ->default(null),
                 Forms\Components\TextInput::make('admin_id')
+                    ->default(Auth::user()->id)
+                    ->label('Created by')
+                    ->readonly()
                     ->required()
                     ->numeric(),
             ]);
@@ -57,17 +71,16 @@ class CharityResource extends Resource
             ->columns([
                 Tables\Columns\TextColumn::make('name')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('logo')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('contact_email')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('contact_phone')
                     ->searchable(),
-                Tables\Columns\TextColumn::make('website_url')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('status'),
-                Tables\Columns\TextColumn::make('admin_id')
-                    ->numeric()
+                Tables\Columns\SelectColumn::make('status')
+                    ->options([
+                        'active' => 'Active',
+                        'inactive' => 'Inactive'
+                    ]),
+                Tables\Columns\TextColumn::make('creator.name')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()

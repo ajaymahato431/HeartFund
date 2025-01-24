@@ -17,27 +17,47 @@ class DonationResource extends Resource
 {
     protected static ?string $model = Donation::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-currency-dollar';
+
+    protected static ?string $navigationGroup = 'Charity';
+
+    protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('campaign_id')
+                Forms\Components\Select::make('campaign_id')
                     ->required()
-                    ->numeric(),
-                Forms\Components\TextInput::make('user_id')
+                    ->relationship('campaign', 'title'),
+                Forms\Components\Select::make('user_id')
                     ->required()
-                    ->numeric(),
+                    ->relationship('user', 'name'),
+
+                Forms\Components\Select::make('payment_method')
+                    ->default('cash')
+                    ->options([
+                        'card' => 'Card',
+                        'bank_transfer' => 'Bank Transfer',
+                        'cash' => 'Cash',
+                        'esewa' => 'Esewa',
+                        'khalti' => 'Khalti',
+                        'imepay' => 'IME Pay'
+                    ])
+                    ->required(),
+                Forms\Components\Select::make('payment_status')
+                    ->default('completed')
+                    ->options([
+                        'pending' => 'Pending',
+                        'completed' => 'Completed',
+                        'failed' => 'Failed'
+                    ])
+                    ->required(),
                 Forms\Components\TextInput::make('amount')
                     ->required()
                     ->numeric(),
-                Forms\Components\TextInput::make('payment_method')
-                    ->required(),
-                Forms\Components\TextInput::make('payment_status')
-                    ->required(),
-                Forms\Components\TextInput::make('transaction_proof')
-                    ->maxLength(255)
+                Forms\Components\FileUpload::make('transaction_proof')
+                    ->ImageEditor()
                     ->default(null),
                 Forms\Components\Textarea::make('donor_message')
                     ->columnSpanFull(),

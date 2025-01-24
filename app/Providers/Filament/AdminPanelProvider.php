@@ -28,6 +28,13 @@ class AdminPanelProvider extends PanelProvider
             ->path('admin')
             ->authGuard('admins')
             ->login()
+            ->brandLogo(asset('images/logo.png'))
+            ->brandLogoHeight('50px')
+            ->favicon(asset('images/favicon/favicon-32x32.png'))
+            ->navigationGroups([
+                'Charity',
+                'User Settings'
+            ])
             ->colors([
                 'primary' => Color::Amber,
             ])

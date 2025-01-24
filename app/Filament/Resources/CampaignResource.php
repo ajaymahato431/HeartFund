@@ -17,36 +17,46 @@ class CampaignResource extends Resource
 {
     protected static ?string $model = Campaign::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-arrow-path-rounded-square';
+
+    protected static ?string $navigationGroup = 'Charity';
+
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('charity_id')
-                    ->required()
-                    ->numeric(),
+                Forms\Components\Select::make('charity_id')
+                    ->relationship('charity', 'name')
+                    ->required(),
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(255),
                 Forms\Components\Textarea::make('description')
                     ->required()
                     ->columnSpanFull(),
-                Forms\Components\TextInput::make('bank_qr')
-                    ->maxLength(255)
-                    ->default(null),
                 Forms\Components\TextInput::make('goal_amt')
                     ->required()
                     ->numeric(),
                 Forms\Components\TextInput::make('raised_amt')
                     ->required()
-                    ->numeric()
+                    ->readOnly()
                     ->default(0.00),
                 Forms\Components\DatePicker::make('start_date')
                     ->required(),
                 Forms\Components\DatePicker::make('end_date')
                     ->required(),
-                Forms\Components\TextInput::make('status')
+                Forms\Components\FileUpload::make('bank_qr')
+                    ->ImageEditor()
+                    ->default(null),
+                Forms\Components\Select::make('status')
+                    ->default('active')
+                    ->options([
+                        'active' => 'Active',
+                        'completed' => 'Completed',
+                        'cancelled' => 'Cancelled'
+                    ])
                     ->required(),
             ]);
     }
@@ -55,12 +65,9 @@ class CampaignResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('charity_id')
-                    ->numeric()
+                Tables\Columns\TextColumn::make('charity.name')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('title')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('bank_qr')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('goal_amt')
                     ->numeric()
@@ -74,7 +81,12 @@ class CampaignResource extends Resource
                 Tables\Columns\TextColumn::make('end_date')
                     ->date()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('status'),
+                Tables\Columns\SelectColumn::make('status')
+                    ->options([
+                        'active' => 'Active',
+                        'completed' => 'Completed',
+                        'cancelled' => 'Cancelled'
+                    ]),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
