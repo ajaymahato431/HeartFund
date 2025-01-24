@@ -46,7 +46,7 @@
                     <ul class="clearfix navigation">
                         <li class="current dropdown"><a href="{{ route('index') }}">Home</a>
                         </li>
-                        <li><a href="about.html">About</a></li>
+                        <li><a href="{{ route('about') }}">About</a></li>
                         <li class="dropdown"><a href="#">Pages</a>
                         </li>
                         <li class="dropdown"><a href="blog.html">Blog</a>

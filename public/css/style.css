@@ -3913,9 +3913,9 @@ li {
     width: 190px;
 }
 
-@media (max-width: 1800px) {
-    figure img {
+/* @media (max-width: 1800spx) {
+    .contact-seciton img {
         display: none !important;
     }
-}
+} */
 /* ======================== End 404 Page Style  ======================== */

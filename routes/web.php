@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,5 +22,6 @@ Route::middleware('auth')->group(function () {
 require __DIR__ . '/auth.php';
 
 Route::get('/', [HomepageController::class, 'index'])->name('index');
+Route::get('/about', [PageController::class, 'about'])->name('about');
 
 Route::get('/campaign/{id}', [HomepageController::class, 'index'])->name('campaign.detail');

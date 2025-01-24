@@ -14,7 +14,10 @@ class HomepageController extends Controller
     {
         $campaigns = Campaign::where('status', 'active')->get();
         $volunteers = Volunteer::where('status', 'approved')->get();
-        $donors = User::whereHas('donations')->get();
-        return view('frontend.homepage', compact('campaigns', 'volunteers'));
+        $topDonors = User::withSum('donations', 'amount')
+            ->orderBy('donations_sum_amount', 'desc')
+            ->take(2)
+            ->get();
+        return view('frontend.homepage', compact('campaigns', 'volunteers', 'topDonors'));
     }
 }

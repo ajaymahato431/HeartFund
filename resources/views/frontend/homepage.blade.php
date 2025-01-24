@@ -217,6 +217,7 @@
                                 <figure><a href="{{ route('campaign.detail', $campaign->id) }}"><img
                                             src="{{ Storage::url($campaign->charity->logo) }}" alt="Images"></a>
                                 </figure>
+
                                 <!-- Start overlay -->
                                 <div class="overlay">
                                     <h4><a href="campaign.detail">Help to reach <span>food!</span></a></h4>
@@ -327,9 +328,8 @@
                             <!-- Start single-item -->
                             <div class="single-item wow fadeInUp">
                                 <div class="img-holder">
-                                    <figure><a href="#"><img src="{{ Storage::url($volunteer->profile_img) }}"
-                                                alt="Images"></a>
-                                    </figure>
+                                    <figure><img src="{{ asset(Storage::url($volunteer->profile_img)) }}"
+                                            alt="Images"></figure>
                                     <!-- Start overlay -->
                                     <div class="overlay">
                                         <div class="link-icon">
@@ -389,21 +389,27 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- /progress-item -->
                         <div class="row">
-                            <div class="col-md-6 col-sm-6">
-                                <div class="donator">
-                                    <div class="img-holder">
-                                        <figure><img src="images/blog/3.png" alt="Images"></figure>
-                                    </div>
-                                    <div class="text">
-                                        <h4>dONALD DI</h4>
-                                        <p>Donator</p>
-                                        <h5>Donated : <span> $115.00</span></h5>
+                            @foreach ($topDonors as $topDonor)
+                                <div class="col-md-6 col-sm-6">
+                                    <div class="donator">
+                                        <div class="img-holder">
+                                            <figure><img src="{{ Storage::url($topDonor->userDetails->profile_img) }}"
+                                                    style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;"
+                                                    alt="Images"></figure>
+                                        </div>
+                                        <div class="text">
+                                            <h4>{{ $topDonor->name }}</h4>
+                                            <p>Donator</p>
+                                            <h5>Donated : <span> {{ $topDonor->donations_sum_amount }}</span></h5>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            @endforeach
                         </div>
+
                         <a href="#" class="btn-2">View all</a>
                     </div>
                 </div>
@@ -431,7 +437,7 @@
     <!--.contact-seciton-->
     <section class="contact-seciton" style="background-image:url(images/blog/bg1.jpg);">
         <div class="img-left wow slideInLeft" data-wow-delay="300ms" data-wow-duration="1500ms">
-            <figure><img src="images/blog/2.png" alt="Images"></figure>
+            {{-- <figure><img src="images/blog/2.png" alt="Images"></figure> --}}
         </div>
         <div class="container">
             <div class="row">
