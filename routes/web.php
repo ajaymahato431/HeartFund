@@ -32,5 +32,7 @@ Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery');
 
 Route::get('/volunteer', [PageController::class, 'volunteer'])->name('volunteer.register');
 Route::post('/volunteer-store', [FrontendCrudController::class, 'volunteerStore'])->name('volunteerStore');
+Route::post('/donation-store', [FrontendCrudController::class, 'donationStore'])->name('donationStore');
+
 
 Route::post('/contact-message', [FrontendCrudController::class, 'contactMessage'])->name('contactMessage');

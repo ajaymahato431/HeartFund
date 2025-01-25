@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\ContactMessage;
+use App\Models\Donation;
 use App\Models\Volunteer;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -75,6 +77,42 @@ class FrontendCrudController extends Controller
 
         if ($volunteer) {
             Alert::success('Form Sent', 'Your Form has been submitted successfully!');
+        }
+
+        return redirect()->back();
+    }
+
+    public function donationStore(Request $request)
+    {
+        // Check if the user is logged in
+        if (!Auth::check()) {
+            return redirect()->route('login')->with('error', 'You must be logged in to make a donation.');
+        }
+
+        // Validate the request
+        $validatedData = $request->validate([
+            'campaign_id' => 'required|exists:campaigns,id',
+            'user_id' => 'required|exists:users,id',
+            'amount' => 'required|numeric|min:1',
+            'payment_method' => 'required|in:card,bank_transfer,cash,esewa,khalti,imepay',
+            'transaction_proof' => 'nullable|file|mimes:jpg,jpeg,png,pdf|max:2048',
+            'donor_message' => 'nullable|string|max:1000',
+        ]);
+
+        // Handle file upload if a proof is provided
+        if ($request->hasFile('transaction_proof')) {
+            $file = $request->file('transaction_proof');
+            $validatedData['transaction_proof'] = $file->store('transaction_proofs', 'public'); // Store file in the public disk
+        }
+
+        // Set default payment status
+        $validatedData['payment_status'] = 'pending';
+
+        // Create the donation record
+        $donation = Donation::create($validatedData);
+
+        if ($donation) {
+            Alert::success('Donation Sent', 'Thank you for your donation! Your transaction is under review.');
         }
 
         return redirect()->back();

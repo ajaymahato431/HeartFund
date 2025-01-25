@@ -70,7 +70,8 @@
                                     <div class="clearfix default-form-2">
                                         <h3 style="text-align: center">Donation Form</h3>
                                         <form id="donation-form" name="donation_form" class="default-form"
-                                            action="#" method="post" enctype="multipart/form-data">
+                                            action="{{ route('donationStore') }}" method="post"
+                                            enctype="multipart/form-data">
                                             @csrf
                                             <!-- Hidden Fields -->
                                             <input type="hidden" name="campaign_id" value="{{ $campaign->id }}">
@@ -171,10 +172,12 @@
                                     <div class="col-md-4 col-sm-4">
                                         <div class="donator">
                                             <div class="img-holder">
-                                                <figure><img
-                                                        src="{{ Storage::url($donator->userDetails->profile_img) }}"
+                                                <figure>
+                                                    <img src="{{ $donator->userDetails && $donator->userDetails->profile_img ? Storage::url($donator->userDetails->profile_img) : asset('images/blankprofile.webp') }}"
                                                         style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;"
-                                                        alt="Images"></figure>
+                                                        alt="Profile Image">
+                                                </figure>
+
                                             </div>
                                             <div class="donator-text">
                                                 <h4>{{ $donator->name }}</h4>

@@ -216,13 +216,15 @@
                         <!-- Start single-item -->
                         <div class="welcome-item">
                             <div class="img-holder">
-                                <figure><a href="{{ route('campaign.detail', $campaign->id) }}"><img
+                                <figure><a href="{{ route('singleCauses', $campaign->id) }}"><img
                                             src="{{ Storage::url($campaign->charity->logo) }}" alt="Images"></a>
                                 </figure>
 
                                 <!-- Start overlay -->
                                 <div class="overlay">
-                                    <h4><a href="campaign.detail">{{ $campaign->charity->name }}</a></h4>
+                                    <h4><a
+                                            href="{{ route('singleCauses', $campaign->id) }}">{{ $campaign->charity->name }}</a>
+                                    </h4>
                                 </div>
                                 <!-- End overlay -->
                             </div>
@@ -250,7 +252,7 @@
                                 <h4 style="padding-top: 20px;">{{ $campaign->title }}</a>
                                     </h3>
                                     <p>{{ $campaign->description }}</p>
-                                    <a href="{{ route('campaign.detail', $campaign->id) }}">Donate now</a>
+                                    <a href="{{ route('singleCauses', $campaign->id) }}">Donate now</a>
                             </div>
                         </div>
                         <!-- End single-item -->

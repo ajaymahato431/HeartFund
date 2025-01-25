@@ -72,10 +72,30 @@
             </nav>
             <div class="signup">
                 <ul>
-                    <li><a href="{{ route('login') }}"><i class="fa fa-arrow-circle-down"
-                                aria-hidden="true"></i>login</a></li>
-                    <li><a href="{{ route('register') }}"><span></span><i class="fa fa-user"
-                                aria-hidden="true"></i>signup</a></li>
+                    @auth
+                        <!-- Show Logout Button if Authenticated -->
+                        <li>
+                            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                @csrf
+                                <button type="submit"
+                                    style="background: none; border: none; color: inherit; cursor: pointer; padding: 0; font: inherit;">
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+                                </button>
+                            </form>
+                        </li>
+                    @else
+                        <!-- Show Login/Signup Buttons if Not Authenticated -->
+                        <li>
+                            <a href="{{ route('login') }}">
+                                <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> Login
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('register') }}">
+                                <i class="fa fa-user" aria-hidden="true"></i> Signup
+                            </a>
+                        </li>
+                    @endauth
                 </ul>
             </div>
         </div>
@@ -125,12 +145,33 @@
             </nav>
             <div class="signup">
                 <ul>
-                    <li><a href="{{ route('login') }}"><i class="fa fa-arrow-circle-down"
-                                aria-hidden="true"></i>login</a></li>
-                    <li><a href="{{ route('register') }}"><span></span><i class="fa fa-user"
-                                aria-hidden="true"></i>signup</a></li>
+                    @auth
+                        <!-- Show Logout Button if Authenticated -->
+                        <li>
+                            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                @csrf
+                                <button type="submit"
+                                    style="background: none; border: none; color: inherit; cursor: pointer; padding: 0; font: inherit;">
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+                                </button>
+                            </form>
+                        </li>
+                    @else
+                        <!-- Show Login/Signup Buttons if Not Authenticated -->
+                        <li>
+                            <a href="{{ route('login') }}">
+                                <i class="fa fa-arrow-circle-down" aria-hidden="true"></i> Login
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{ route('register') }}">
+                                <i class="fa fa-user" aria-hidden="true"></i> Signup
+                            </a>
+                        </li>
+                    @endauth
                 </ul>
             </div>
+
         </div>
     </section>
     <!--/Main-Menu-->

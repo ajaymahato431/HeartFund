@@ -25,9 +25,14 @@ class PageController extends Controller
     public function singleCauses($id)
     {
         $campaign = Campaign::findOrFail($id);
-        $donators = User::with('donations')->whereHas('donations', function ($query) use ($id) {
-            $query->where('campaign_id', $id);
+        $donators = User::with(['donations' => function ($query) use ($id) {
+            $query->where('campaign_id', $id)
+                ->where('payment_status', 'completed'); // Filter by completed payment_status
+        }])->whereHas('donations', function ($query) use ($id) {
+            $query->where('campaign_id', $id)
+                ->where('payment_status', 'completed'); // Ensure only completed donations are fetched
         })->get();
+
         return view('frontend.single-causes', compact('campaign', 'donators'));
     }
 
