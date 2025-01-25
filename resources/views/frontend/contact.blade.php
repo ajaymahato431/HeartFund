@@ -67,29 +67,45 @@
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group">
-                                                <input type="text" name="form_name" value=""
+                                                <input type="text" name="form_name" value="{{ old('form_name') }}"
                                                     placeholder="Full Name" required="">
+                                                @error('form_name')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6 col-xs-12">
                                             <div class="form-group">
-                                                <input type="email" name="form_email" value=""
+                                                <input type="email" name="form_email" value="{{ old('form_email') }}"
                                                     placeholder="Email Address" required="">
+                                                @error('form_email')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </div>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-md-12">
                                             <div class="form-group">
-                                                <input type="text" name="form_subject" value=""
-                                                    placeholder="Subject" required="">
+                                                <input type="text" name="form_subject"
+                                                    value="{{ old('form_subject') }}" placeholder="Subject"
+                                                    required="">
+                                                @error('form_subject')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </div>
                                             <div class="form-group">
-                                                <input type="text" name="form_phone" value=""
-                                                    placeholder="phone" required="">
+                                                <input type="text" name="form_phone" value="{{ old('form_phone') }}"
+                                                    placeholder="Phone" required="">
+                                                @error('form_phone')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </div>
                                             <div class="form-group comments">
-                                                <textarea name="form_message" placeholder="Detail" required=""></textarea>
+                                                <textarea name="form_message" placeholder="Detail" required="">{{ old('form_message') }}</textarea>
+                                                @error('form_message')
+                                                    <span class="text-danger">{{ $message }}</span>
+                                                @enderror
                                             </div>
                                             <input id="form_botcheck" name="form_botcheck" class="form-control"
                                                 type="hidden" value="">
@@ -98,6 +114,7 @@
                                         </div>
                                     </div>
                                 </form>
+
                             </div>
                         </div>
                     </div>

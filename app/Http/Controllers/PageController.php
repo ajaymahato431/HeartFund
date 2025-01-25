@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Campaign;
+use App\Models\Gallery;
+use App\Models\User;
 use App\Models\Volunteer;
 use Illuminate\Http\Request;
 
@@ -22,18 +24,23 @@ class PageController extends Controller
 
     public function donators()
     {
-        $campaigns = Campaign::where('status', 'active')->paginate(6);
-        return view('frontend.donators', compact('campaigns'));
+        $donators = User::latest()->with('donations')->paginate(12);
+        return view('frontend.donators', compact('donators'));
     }
 
     public function gallery()
     {
-        $campaigns = Campaign::where('status', 'active')->paginate(6);
-        return view('frontend.gallery', compact('campaigns'));
+        $galleries = Gallery::latest()->paginate(12);
+        return view('frontend.gallery', compact('galleries'));
     }
 
     public function contact()
     {
         return view('frontend.contact');
+    }
+
+    public function volunteer()
+    {
+        return view('frontend.volunteer');
     }
 }

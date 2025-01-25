@@ -47,7 +47,7 @@
                             data-splitin="none" data-splitout="none" data-elementdelay="0.01" data-endelementdelay="0.3"
                             data-endspeed="1200" data-endeasing="Power4.easeIn"
                             style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">
-                            <div class="grey-title"><a href="#" class="btn-3">Donate now</a></div>
+                            <div class="grey-title"><a href="{{ route('causes') }}" class="btn-3">Donate now</a></div>
                         </div>
                     </li>
                     <li data-transition="fade" data-slotamount="1" data-masterspeed="1000"
@@ -92,7 +92,8 @@
                             data-splitin="none" data-splitout="none" data-elementdelay="0.01"
                             data-endelementdelay="0.3" data-endspeed="1200" data-endeasing="Power4.easeIn"
                             style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">
-                            <div class="grey-title"><a href="#" class="btn-3">Donate now</a></div>
+                            <div class="grey-title"><a href="{{ route('causes') }}" class="btn-3">Donate now</a>
+                            </div>
                         </div>
 
                     </li>
@@ -139,7 +140,8 @@
                             data-splitin="none" data-splitout="none" data-elementdelay="0.01"
                             data-endelementdelay="0.3" data-endspeed="1200" data-endeasing="Power4.easeIn"
                             style="z-index: 4; max-width: auto; max-height: auto; white-space: nowrap;">
-                            <div class="grey-title"><a href="#" class="btn-3">Donate now</a></div>
+                            <div class="grey-title"><a href="{{ route('causes') }}" class="btn-3">Donate now</a>
+                            </div>
                         </div>
 
                     </li>
@@ -163,7 +165,7 @@
                             <h2>01. donator</h2>
                             <p>Our mission is to extend a helping hand to those in need,
                                 changing lives for the better.</p>
-                            <a href="{{ route('register') }}">Donate Now</a>
+                            <a href="{{ route('causes') }}">Donate Now</a>
                         </div>
                     </div>
                     <!-- End single-item -->
@@ -175,7 +177,7 @@
                             <h2>02. volunteer</h2>
                             <p>Our mission is to extend a helping hand to those in need,
                                 changing lives for the better.</p>
-                            <a href="{{ route('register') }}">join Now</a>
+                            <a href="{{ route('volunteer.register') }}">join Now</a>
                         </div>
                     </div>
                     <!-- End single-item -->
@@ -187,7 +189,7 @@
                             <h2>03. fundraise</h2>
                             <p>Our mission is to extend a helping hand to those in need,
                                 changing lives for the better.</p>
-                            <a href="{{ route('register') }}">Donate Now</a>
+                            <a href="{{ route('causes') }}">Donate Now</a>
                         </div>
                     </div>
                     <!-- End single-item -->
@@ -426,7 +428,7 @@
                                 lives of those we serve. Together, we work tirelessly to transform challenges into
                                 opportunities.
                             </p>
-                            <a href="#" class="btn-3">Apply now</a>
+                            <a href="{{ route('volunteer.register') }}" class="btn-3">Apply now</a>
                         </div>
                     </div>
                 </div>
@@ -453,24 +455,40 @@
                 <div class="col-md-5 col-sm-9">
                     <div class="clearfix default-form">
                         <form method="post" action="{{ route('contactMessage') }}" class="contact-form">
+                            @csrf
                             <div class="form-group name">
                                 <input type="text" name="form_name" value="" placeholder="Full Name"
                                     required="">
+                                @error('form_name')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <input type="email" name="form_email" value="" placeholder="Email Address"
                                     required="">
+                                @error('form_email')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <input type="text" name="form_subject" value="" placeholder="Subject"
                                     required="">
+                                @error('form_subject')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group">
                                 <input type="text" name="form_phone" value="" placeholder="phone"
                                     required="">
+                                @error('form_phone')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <div class="form-group comments">
                                 <textarea name="form_message" placeholder="Detail" required=""></textarea>
+                                @error('form_message')
+                                    <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
                             <button class="btn btn-1" type="submit" data-loading-text="Please wait...">Contact
                                 Now</button>

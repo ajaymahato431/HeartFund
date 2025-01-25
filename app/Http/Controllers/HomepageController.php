@@ -12,7 +12,7 @@ class HomepageController extends Controller
 {
     public function index()
     {
-        $campaigns = Campaign::where('status', 'active')->get();
+        $campaigns = Campaign::where('status', 'active')->latest()->take(4)->get();
         $volunteers = Volunteer::where('status', 'approved')->get();
         $topDonors = User::withSum('donations', 'amount')
             ->orderBy('donations_sum_amount', 'desc')

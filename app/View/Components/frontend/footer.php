@@ -2,6 +2,7 @@
 
 namespace App\View\Components\frontend;
 
+use App\Models\Gallery;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,7 @@ class footer extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.frontend.footer');
+        $galleries = Gallery::latest()->take(4)->get();
+        return view('components.frontend.footer', compact('galleries'));
     }
 }

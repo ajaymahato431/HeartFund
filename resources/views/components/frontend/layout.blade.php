@@ -39,6 +39,9 @@
     <div class="scroll-to-top scroll-to-target" data-target=".main-header"><span class="fa fa-long-arrow-up"></span>
     </div>
 
+    <!-- Include SweetAlert -->
+    @include('sweetalert::alert')
+
     <script src="js/jquery.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.countTo.js"></script>

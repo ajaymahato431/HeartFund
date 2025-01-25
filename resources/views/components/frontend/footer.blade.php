@@ -22,80 +22,25 @@
 
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="gallery-widget">
-                        <h2>Instagram Photos</h2>
+                        <h2>Gallery Photos</h2>
                         <ul class="gallery">
-                            <li>
-                                <div class="img-holder">
-                                    <img src="images/gallery/1.jpg" alt="Images">
-                                    <div class="overlay">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
+                            @foreach ($galleries as $gallery)
+                                <li>
+                                    <div class="img-holder">
+                                        <img style="width: 80px; height: 80px; object-fit: cover;"
+                                            src="{{ Storage::url($gallery->photo_path) }}" alt="Images">
+                                        <div class="overlay">
+                                            <div class="box">
+                                                <div class="content">
+                                                    <a href="{{ route('gallery') }}"><i class="fa fa-link"
+                                                            aria-hidden="true"></i></a>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img-holder">
-                                    <img src="images/gallery/2.jpg" alt="Images">
-                                    <div class="overlay">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img-holder">
-                                    <img src="images/gallery/3.jpg" alt="Images">
-                                    <div class="overlay">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img-holder">
-                                    <img src="images/gallery/4.jpg" alt="Images">
-                                    <div class="overlay">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img-holder">
-                                    <img src="images/gallery/5.jpg" alt="Images">
-                                    <div class="overlay">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img-holder">
-                                    <img src="images/gallery/6.jpg" alt="Images">
-                                    <div class="overlay">
-                                        <div class="box">
-                                            <div class="content">
-                                                <a href="#"><i class="fa fa-link" aria-hidden="true"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </li>
+                                </li>
+                            @endforeach
+
                         </ul>
                     </div>
                 </div>

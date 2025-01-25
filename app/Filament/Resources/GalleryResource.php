@@ -27,12 +27,14 @@ class GalleryResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\TextInput::make('photo_path')
-                    ->required()
-                    ->maxLength(255),
+
                 Forms\Components\TextInput::make('title')
                     ->maxLength(255)
                     ->default(null),
+
+                Forms\Components\FileUpload::make('photo_path')
+                    ->required()
+                    ->ImageEditor(),
             ]);
     }
 
@@ -40,10 +42,9 @@ class GalleryResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('photo_path')
-                    ->searchable(),
                 Tables\Columns\TextColumn::make('title')
                     ->searchable(),
+                Tables\Columns\ImageColumn::make('photo_path'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
