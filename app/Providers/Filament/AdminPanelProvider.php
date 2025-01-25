@@ -33,6 +33,7 @@ class AdminPanelProvider extends PanelProvider
             ->favicon(asset('images/favicon/favicon-32x32.png'))
             ->navigationGroups([
                 'Charity',
+                'Utilities',
                 'User Settings'
             ])
             ->colors([

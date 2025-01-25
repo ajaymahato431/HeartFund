@@ -220,7 +220,7 @@
 
                                 <!-- Start overlay -->
                                 <div class="overlay">
-                                    <h4><a href="campaign.detail">Help to reach <span>food!</span></a></h4>
+                                    <h4><a href="campaign.detail">{{ $campaign->charity->name }}</a></h4>
                                 </div>
                                 <!-- End overlay -->
                             </div>

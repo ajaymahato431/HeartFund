@@ -44,29 +44,29 @@
                 </div>
                 <div class="clearfix navbar-collapse collapse">
                     <ul class="clearfix navigation">
-                        <li class="current dropdown"><a href="{{ route('index') }}">Home</a>
+                        <li><a href="{{ route('index') }}">Home</a>
                         </li>
                         <li><a href="{{ route('about') }}">About</a></li>
-                        <li class="dropdown"><a href="#">Pages</a>
+                        <li><a href="{{ route('donators') }}">Donators</a>
                         </li>
-                        <li class="dropdown"><a href="blog.html">Blog</a>
+                        <li><a href="{{ route('gallery') }}">Gallery</a>
                         </li>
-                        <li class="dropdown"><a href="causes.html">Causes</a>
+                        <li><a href="{{ route('causes') }}">Causes</a>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
                     <ul class="clearfix mobile-menu">
 
-                        <li class="current dropdown"><a href="{{ route('index') }}">Home</a>
+                        <li><a href="{{ route('index') }}">Home</a>
                         </li>
-                        <li><a href="about.html">About</a></li>
-                        <li class="dropdown"><a href="#">Pages</a>
+                        <li><a href="{{ route('about') }}">About</a></li>
+                        <li><a href="{{ route('donators') }}">Donators</a>
                         </li>
-                        <li class="dropdown"><a href="blog.html">Blog</a>
+                        <li><a href="{{ route('gallery') }}">Gallery</a>
                         </li>
-                        <li class="dropdown"><a href="causes.html">Causes</a>
+                        <li><a href="{{ route('causes') }}">Causes</a>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
                 </div>
             </nav>
@@ -97,29 +97,29 @@
                 </div>
                 <div class="clearfix navbar-collapse collapse">
                     <ul class="clearfix navigation">
-                        <li class="current dropdown"><a href="index-2.html">Home</a>
+                        <li><a href="{{ route('index') }}">Home</a>
                         </li>
-                        <li><a href="about.html">About</a></li>
-                        <li class="dropdown"><a href="#">Pages</a>
+                        <li><a href="{{ route('about') }}">About</a></li>
+                        <li><a href="{{ route('donators') }}">Donators</a>
                         </li>
-                        <li class="dropdown"><a href="blog.html">Blog</a>
+                        <li><a href="{{ route('gallery') }}">Gallery</a>
                         </li>
-                        <li class="dropdown"><a href="causes.html">Causes</a>
+                        <li><a href="{{ route('causes') }}">Causes</a>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
                     <ul class="clearfix mobile-menu">
 
-                        <li class="current dropdown"><a href="index-2.html">Home</a>
+                        <li><a href="{{ route('index') }}">Home</a>
                         </li>
-                        <li><a href="about.html">About</a></li>
-                        <li class="dropdown"><a href="#">Pages</a>
+                        <li><a href="{{ route('about') }}">About</a></li>
+                        <li><a href="{{ route('donators') }}">Donators</a>
                         </li>
-                        <li class="dropdown"><a href="blog.html">Blog</a>
+                        <li><a href="{{ route('gallery') }}">Gallery</a>
                         </li>
-                        <li class="dropdown"><a href="causes.html">Causes</a>
+                        <li><a href="{{ route('causes') }}">Causes</a>
                         </li>
-                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="{{ route('contact') }}">Contact</a></li>
                     </ul>
                 </div>
             </nav>
