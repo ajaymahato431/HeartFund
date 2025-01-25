@@ -21,12 +21,12 @@
                         <!-- Start single-item -->
                         <div class="welcome-item hvr-float-shadow">
                             <div class="img-holder">
-                                <figure><a href="single-causes.html"><img
+                                <figure><a href="/causes/{{ $campaign->id }}"><img
                                             src="{{ Storage::url($campaign->charity->logo) }}" alt="Images"></a>
                                 </figure>
                                 <!-- Start overlay -->
                                 <div class="overlay">
-                                    <h4><a href="single-causes.html">{{ $campaign->charity->name }}</a></h4>
+                                    <h4><a href="/causes/{{ $campaign->id }}">{{ $campaign->charity->name }}</a></h4>
                                 </div>
                                 <!-- End overlay -->
                             </div>

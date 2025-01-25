@@ -22,6 +22,15 @@ class PageController extends Controller
         return view('frontend.causes', compact('campaigns'));
     }
 
+    public function singleCauses($id)
+    {
+        $campaign = Campaign::findOrFail($id);
+        $donators = User::with('donations')->whereHas('donations', function ($query) use ($id) {
+            $query->where('campaign_id', $id);
+        })->get();
+        return view('frontend.single-causes', compact('campaign', 'donators'));
+    }
+
     public function donators()
     {
         $donators = User::latest()->with('donations')->paginate(12);

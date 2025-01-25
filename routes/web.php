@@ -25,14 +25,12 @@ require __DIR__ . '/auth.php';
 Route::get('/', [HomepageController::class, 'index'])->name('index');
 Route::get('/about', [PageController::class, 'about'])->name('about');
 Route::get('/causes', [PageController::class, 'causes'])->name('causes');
+Route::get('/causes/{id}', [PageController::class, 'singleCauses'])->name('singleCauses');
 Route::get('/contact', [PageController::class, 'contact'])->name('contact');
 Route::get('/donators', [PageController::class, 'donators'])->name('donators');
 Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery');
 
 Route::get('/volunteer', [PageController::class, 'volunteer'])->name('volunteer.register');
 Route::post('/volunteer-store', [FrontendCrudController::class, 'volunteerStore'])->name('volunteerStore');
-
-
-Route::get('/campaign/{id}', [HomepageController::class, 'index'])->name('campaign.detail');
 
 Route::post('/contact-message', [FrontendCrudController::class, 'contactMessage'])->name('contactMessage');
