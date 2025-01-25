@@ -31,5 +31,5 @@ Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery');
 
 Route::get('/campaign/{id}', [HomepageController::class, 'index'])->name('campaign.detail');
 
-Route::post('/contact-message-store', [FrontendCrudController::class, 'contactMessage'])->name('contactMessage');
+Route::post('/contact-message', [FrontendCrudController::class, 'contactMessage'])->name('contactMessage');
 Route::post('/volunteer-store', [FrontendCrudController::class, 'volunteerStore'])->name('volunteerStore');

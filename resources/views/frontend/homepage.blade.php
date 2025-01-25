@@ -452,21 +452,28 @@
                 </div>
                 <div class="col-md-5 col-sm-9">
                     <div class="clearfix default-form">
-                        <form method="post" action="http://perconcept.muzahid.com/Kindness/sendemail.php"
-                            class="contact-form">
+                        <form method="post" action="{{ route('contactMessage') }}" class="contact-form">
                             <div class="form-group name">
-                                <input type="text" name="lastname" placeholder="Full Name">
+                                <input type="text" name="form_name" value="" placeholder="Full Name"
+                                    required="">
                             </div>
                             <div class="form-group">
-                                <input type="email" name="email" placeholder="Email">
+                                <input type="email" name="form_email" value="" placeholder="Email Address"
+                                    required="">
                             </div>
                             <div class="form-group">
-                                <input type="text" name="phone" placeholder="Mobile ">
+                                <input type="text" name="form_subject" value="" placeholder="Subject"
+                                    required="">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="form_phone" value="" placeholder="phone"
+                                    required="">
                             </div>
                             <div class="form-group comments">
-                                <textarea type="text" name="message" placeholder="Text"></textarea>
+                                <textarea name="form_message" placeholder="Detail" required=""></textarea>
                             </div>
-                            <button type="submit" class="btn btn-1">Contact Now</button>
+                            <button class="btn btn-1" type="submit" data-loading-text="Please wait...">Contact
+                                Now</button>
                         </form>
                     </div>
                 </div>
