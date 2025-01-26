@@ -1,6 +1,4 @@
 <x-user.layout>
-    <div>
-        Hi
-    </div>
+    Hi {{ auth()->user()->name }}!
 
 </x-user.layout>
