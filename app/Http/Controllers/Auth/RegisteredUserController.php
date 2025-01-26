@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserDetail;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -31,14 +32,32 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:' . User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            'phone' => 'required|string|unique:user_details',
+            'address' => 'required|string',
+            'country' => 'required|string',
+            'blood_group' => 'nullable|string',
+            'profile_img' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
         ]);
 
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+        ]);
+
+        $profileImgPath = $request->file('profile_img')
+            ? $request->file('profile_img')->store('profile_images', 'public')
+            : null;
+
+        UserDetail::create([
+            'user_id' => $user->id,
+            'phone' => $request['phone'],
+            'address' => $request['address'],
+            'country' => $request['country'],
+            'blood_group' => $request['blood_group'],
+            'profile_img' => $profileImgPath,
         ]);
 
         event(new Registered($user));

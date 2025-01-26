@@ -31,7 +31,7 @@
     <section class="mainmenu-area">
         <div class="container">
             <div class="logo pull-left">
-                <a href="index-2.html"><img src="images/logo.png" alt=""></a>
+                <a href="{{ route('index') }}"><img src="{{ asset('images/logo.png') }}" alt="logo.png"></a>
             </div>
             <nav class="main-menu pull-left">
                 <div class="navbar-header">
