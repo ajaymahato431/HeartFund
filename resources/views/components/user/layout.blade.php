@@ -15,7 +15,9 @@
     <link rel="stylesheet" href="assets/css/components.css">
     <!-- Custom style CSS -->
     <link rel="stylesheet" href="assets/css/custom.css">
-    <link rel='shortcut icon' type='image/x-icon' href='assets/img/favicon.ico' />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('images/favicon/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('images/favicon/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('images/favicon/favicon-16x16.png') }}">
 </head>
 
 <body>
@@ -23,6 +25,7 @@
     <div id="app">
         <div class="main-wrapper main-wrapper-1">
             <div class="navbar-bg"></div>
+
             <x-user.navbar />
 
             <x-user.sidebar />
