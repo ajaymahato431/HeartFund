@@ -9,10 +9,24 @@
         <ul class="sidebar-menu">
             <li class="menu-header">Main</li>
             <li class="dropdown">
-                <a href="index.html" class="nav-link"><i data-feather="monitor"></i><span>Dashboard</span></a>
+                <a href="{{ route('dashboard') }}" class="nav-link"><i
+                        data-feather="monitor"></i><span>Dashboard</span></a>
             </li>
             <li class="dropdown">
-                <a href="index.html" class="nav-link"><i data-feather="dollar-sign"></i><span>Donations</span></a>
+                <a href="{{ route('index') }}" class="nav-link"><i data-feather="home"></i><span>Home Page</span></a>
+            </li>
+            <li class="dropdown">
+                <a href="{{ route('profile.edit') }}" class="nav-link"><i
+                        data-feather="settings"></i><span>Settings</span></a>
+            </li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            <li class="dropdown">
+                <a href="#" class="nav-link"
+                    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                    <i data-feather="log-out"></i>
+                    Logout</a>
             </li>
 
         </ul>

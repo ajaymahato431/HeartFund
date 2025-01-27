@@ -77,7 +77,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="profile-tab2" data-toggle="tab" href="#settings" role="tab"
-                                aria-selected="false">Setting</a>
+                                aria-selected="false">Update Profile</a>
                         </li>
                     </ul>
                     <div class="tab-content tab-bordered" id="myTab3Content">
@@ -114,7 +114,7 @@
                                         @php
                                             $donations = auth()->user()->donations()->paginate(5);
                                         @endphp
-                                        <div class="card-body p-0">
+                                        <div class="p-0 card-body">
                                             <div class="table-responsive">
                                                 <table class="table table-striped table-md">
                                                     <tr>
@@ -163,7 +163,7 @@
                                                 </table>
                                             </div>
                                         </div>
-                                        <div class="card-footer text-right">
+                                        <div class="text-right card-footer">
                                             <nav class="d-inline-block">
                                                 {{ $donations->links('pagination::bootstrap-4') }}
                                             </nav>
@@ -214,7 +214,7 @@
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="form-group mb-0 col-12">
+                                        <div class="mb-0 form-group col-12">
                                             <div class="custom-control custom-checkbox">
                                                 <input type="checkbox" name="remember" class="custom-control-input"
                                                     id="newsletter">
@@ -227,10 +227,11 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card-footer text-right">
+                                <div class="text-right card-footer">
                                     <button class="btn btn-primary">Save Changes</button>
                                 </div>
                             </form>
+
                         </div>
                     </div>
                 </div>
