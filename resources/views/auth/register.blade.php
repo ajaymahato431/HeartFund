@@ -5,7 +5,7 @@
         <!-- Name -->
         <div>
             <x-input-label for="name" :value="__('Name')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required
+            <x-text-input id="name" class="block w-full mt-1" type="text" name="name" :value="old('name')" required
                 autofocus autocomplete="name" />
             <x-input-error :messages="$errors->get('name')" class="mt-2" />
         </div>
@@ -13,7 +13,7 @@
         <!-- Email Address -->
         <div class="mt-4">
             <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
+            <x-text-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')"
                 required autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="mt-2" />
         </div>
@@ -21,7 +21,7 @@
         <!-- Password -->
         <div class="mt-4">
             <x-input-label for="password" :value="__('Password')" />
-            <x-text-input id="password" class="block mt-1 w-full" type="password" name="password" required
+            <x-text-input id="password" class="block w-full mt-1" type="password" name="password" required
                 autocomplete="new-password" />
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
@@ -29,7 +29,7 @@
         <!-- Confirm Password -->
         <div class="mt-4">
             <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
-            <x-text-input id="password_confirmation" class="block mt-1 w-full" type="password"
+            <x-text-input id="password_confirmation" class="block w-full mt-1" type="password"
                 name="password_confirmation" required autocomplete="new-password" />
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
@@ -37,7 +37,7 @@
         <!-- Phone -->
         <div class="mt-4">
             <x-input-label for="phone" :value="__('Phone')" />
-            <x-text-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')"
+            <x-text-input id="phone" class="block w-full mt-1" type="text" name="phone" :value="old('phone')"
                 required />
             <x-input-error :messages="$errors->get('phone')" class="mt-2" />
         </div>
@@ -45,7 +45,7 @@
         <!-- Address -->
         <div class="mt-4">
             <x-input-label for="address" :value="__('Address')" />
-            <x-text-input id="address" class="block mt-1 w-full" type="text" name="address" :value="old('address')"
+            <x-text-input id="address" class="block w-full mt-1" type="text" name="address" :value="old('address')"
                 required />
             <x-input-error :messages="$errors->get('address')" class="mt-2" />
         </div>
@@ -53,7 +53,7 @@
         <!-- Country -->
         <div class="mt-4">
             <x-input-label for="country" :value="__('Country')" />
-            <x-text-input id="country" class="block mt-1 w-full" type="text" name="country" :value="old('country')"
+            <x-text-input id="country" class="block w-full mt-1" type="text" name="country" :value="old('country')"
                 required />
             <x-input-error :messages="$errors->get('country')" class="mt-2" />
         </div>
@@ -61,7 +61,7 @@
         <!-- Blood Group -->
         <div class="mt-4">
             <x-input-label for="blood_group" :value="__('Blood Group')" />
-            <x-text-input id="blood_group" class="block mt-1 w-full" type="text" name="blood_group"
+            <x-text-input id="blood_group" class="block w-full mt-1" type="text" name="blood_group"
                 :value="old('blood_group')" required />
             <x-input-error :messages="$errors->get('blood_group')" class="mt-2" />
         </div>
@@ -69,12 +69,12 @@
         <!-- Profile Image -->
         <div class="mt-4">
             <x-input-label for="profile_img" :value="__('Profile Image')" />
-            <x-text-input id="profile_img" class="block mt-1 w-full" type="file" name="profile_img" required />
+            <x-text-input id="profile_img" class="block w-full mt-1" type="file" name="profile_img" required />
             <x-input-error :messages="$errors->get('profile_img')" class="mt-2" />
         </div>
 
         <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
+            <a class="text-sm text-gray-600 underline rounded-md dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800"
                 href="{{ route('login') }}">
                 {{ __('Already registered?') }}
             </a>

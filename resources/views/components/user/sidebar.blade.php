@@ -15,10 +15,7 @@
             <li class="dropdown">
                 <a href="{{ route('index') }}" class="nav-link"><i data-feather="home"></i><span>Home Page</span></a>
             </li>
-            <li class="dropdown">
-                <a href="{{ route('profile.edit') }}" class="nav-link"><i
-                        data-feather="settings"></i><span>Settings</span></a>
-            </li>
+
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                 @csrf
             </form>
@@ -26,7 +23,11 @@
                 <a href="#" class="nav-link"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <i data-feather="log-out"></i>
-                    Logout</a>
+                    <span>Log Out</span></a>
+            </li>
+            <li class="dropdown">
+                <a href="{{ route('profile.edit') }}" class="nav-link"><i data-feather="delete"></i><span>Delete
+                        Account</span></a>
             </li>
 
         </ul>

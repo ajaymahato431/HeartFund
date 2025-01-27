@@ -7,6 +7,8 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class PasswordController extends Controller
 {
@@ -20,10 +22,15 @@ class PasswordController extends Controller
             'password' => ['required', Password::defaults(), 'confirmed'],
         ]);
 
-        $request->user()->update([
+        $message = $request->user()->update([
             'password' => Hash::make($validated['password']),
         ]);
 
-        return back()->with('status', 'password-updated');
+        if ($message) {
+            Alert::success('Password Updated', 'Your password has been changed successfully!');
+            return redirect()->back();
+        }
+
+        return back()->withErrors($validated, 'updatePassword');
     }
 }

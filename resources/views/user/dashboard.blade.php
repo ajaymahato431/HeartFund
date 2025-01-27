@@ -77,7 +77,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" id="profile-tab2" data-toggle="tab" href="#settings" role="tab"
-                                aria-selected="false">Update Profile</a>
+                                aria-selected="false">Settings</a>
                         </li>
                     </ul>
                     <div class="tab-content tab-bordered" id="myTab3Content">
@@ -173,62 +173,132 @@
                             </div>
                         </div>
                         <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="profile-tab2">
-                            <form method="post" class="needs-validation">
+                            <form method="POST" action="{{ route('profile.update') }}" class="needs-validation"
+                                enctype="multipart/form-data">
+                                @csrf
+                                @method('patch')
                                 <div class="card-header">
                                     <h4>Edit Profile</h4>
                                 </div>
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="form-group col-md-6 col-12">
-                                            <label>First Name</label>
-                                            <input type="text" class="form-control" value="John">
-                                            <div class="invalid-feedback">
-                                                Please fill in the first name
-                                            </div>
+                                            <label for="name">Full Name</label>
+                                            <input class="form-control" id="name" type="text" name="name"
+                                                :value="old('name')" required autofocus autocomplete="name"
+                                                value="{{ auth()->user()->name }}">
+                                            @error('name')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                         <div class="form-group col-md-6 col-12">
-                                            <label>Last Name</label>
-                                            <input type="text" class="form-control" value="Deo">
-                                            <div class="invalid-feedback">
-                                                Please fill in the last name
-                                            </div>
+                                            <label for="email">Email</label>
+                                            <input id="email" class="form-control" type="email" name="email"
+                                                :value="old('email')" value="{{ auth()->user()->email }}" required
+                                                autocomplete="username">
+                                            @error('email')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="form-group col-md-7 col-12">
-                                            <label>Email</label>
-                                            <input type="email" class="form-control" value="test@example.com">
-                                            <div class="invalid-feedback">
-                                                Please fill in the email
-                                            </div>
+                                        <div class="form-group col-md-6 col-12">
+                                            <label for="phone">Phone</label>
+                                            <input id="phone" class="form-control" type="text" name="phone"
+                                                :value="old('phone')"
+                                                value="{{ auth()->user()->userDetails->phone }}" required>
+                                            @error('phone')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
-                                        <div class="form-group col-md-5 col-12">
-                                            <label>Phone</label>
-                                            <input type="tel" class="form-control" value="">
+                                        <div class="form-group col-md-6 col-12">
+                                            <label for="address">Address</label>
+                                            <input id="address" class="form-control" type="text" name="address"
+                                                :value="old('address')"
+                                                value="{{ auth()->user()->userDetails->address }}" required>
+                                            @error('address')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="form-group col-12">
-                                            <label>Bio</label>
-                                            <textarea class="form-control summernote-simple">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur voluptatum alias molestias minus quod dignissimos.</textarea>
+                                        <div class="form-group col-md-6 col-12">
+                                            <label for="country">Country</label>
+                                            <input id="country" class="form-control" ype="text" name="country"
+                                                :value="old('country')"
+                                                value="{{ auth()->user()->userDetails->country }}" required>
+                                            @error('country')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="form-group col-md-6 col-12">
+                                            <label for="blood_group">Blood Group</label>
+                                            <input id="blood_group" class="form-control" type="text"
+                                                name="blood_group" :value="old('blood_group')"
+                                                value="{{ auth()->user()->userDetails->blood_group }}" required>
+                                            @error('blood_group')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                     <div class="row">
-                                        <div class="mb-0 form-group col-12">
-                                            <div class="custom-control custom-checkbox">
-                                                <input type="checkbox" name="remember" class="custom-control-input"
-                                                    id="newsletter">
-                                                <label class="custom-control-label" for="newsletter">Subscribe to
-                                                    newsletter</label>
-                                                <div class="text-muted form-text">
-                                                    You will get new information about products, offers and promotions
-                                                </div>
-                                            </div>
+                                        <div class="form-group col-md-12 col-12">
+                                            <label for="profile_img">Profile Image</label>
+                                            <input id="profile_img" class="form-control" type="file"
+                                                name="profile_img"
+                                                value="{{ auth()->user()->userDetails->profile_img }}">
+                                            @error('profile_img')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
                                 <div class="text-right card-footer">
-                                    <button class="btn btn-primary">Save Changes</button>
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
+                                </div>
+                            </form>
+
+                            <form method="POST" action="{{ route('password.update') }}" class="needs-validation">
+                                @csrf
+                                @method('put')
+                                <div class="card-header">
+                                    <h4>Update Password</h4>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="form-group col-md-12 col-12">
+                                            <label for="update_password_current_password">Current Password</label>
+                                            <input id="update_password_current_password" name="current_password"
+                                                type="password" autocomplete="current-password" class="form-control">
+                                            @error('current_password', 'updatePassword')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12 col-12">
+                                            <label for="update_password_password">New Password</label>
+                                            <input id="update_password_password" name="password" type="password"
+                                                autocomplete="new-password" class="form-control">
+                                            @error('password', 'updatePassword')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="form-group col-md-12 col-12">
+                                            <label for="update_password_password_confirmation">Confirm Password</label>
+                                            <input id="update_password_password_confirmation"
+                                                name="password_confirmation" type="password"
+                                                autocomplete="new-password" class="form-control">
+                                            @error('password_confirmation', 'updatePassword')
+                                                <span class="text-danger">{{ $message }}</span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-right card-footer">
+                                    <button type="submit" class="btn btn-primary">Save Changes</button>
                                 </div>
                             </form>
 
