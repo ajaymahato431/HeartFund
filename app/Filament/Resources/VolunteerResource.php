@@ -105,7 +105,8 @@ class VolunteerResource extends Resource
                 Tables\Columns\TextColumn::make('address')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('country')
-                    ->searchable(),
+                    ->searchable()
+                    ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('blood_group')
                     ->searchable(),
                 Tables\Columns\SelectColumn::make('status')

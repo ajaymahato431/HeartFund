@@ -231,7 +231,8 @@
                             <div class="text">
                                 <div class="pro-text">
                                     <h4>{{ $campaign->raised_amt }}</h4><br>
-                                    <p>Raised of <span>{{ $campaign->goal_amt }}</span></p>
+                                    <p>Raised of <span>{{ $campaign->goal_amt }}</span>
+                                    </p>
                                 </div>
                                 <!--.progress-item -->
                                 @php
@@ -249,9 +250,10 @@
                                     </div>
                                 </div>
                                 <!-- /progress-item -->
-                                <h4 style="padding-top: 20px;">{{ $campaign->title }}</a>
+                                <h4 style="padding-top: 20px; font-weight: bold"">{{ $campaign->title }}</a>
                                     </h3>
-                                    <p>{{ $campaign->description }}</p>
+                                    <p style="padding-bottom: 2px">Start Date: {{ $campaign->start_date }}</p>
+                                    <p style="padding-top: 2px">End Date: {{ $campaign->end_date }}</p>
                                     <a href="{{ route('singleCauses', $campaign->id) }}">Donate now</a>
                             </div>
                         </div>
@@ -332,7 +334,8 @@
                             <!-- Start single-item -->
                             <div class="single-item wow fadeInUp">
                                 <div class="img-holder">
-                                    <figure><img src="{{ asset(Storage::url($volunteer->profile_img)) }}"
+                                    <figure><img
+                                            src="{{ $volunteer->profile_img ? Storage::url($volunteer->profile_img) : asset('images/blankprofile.webp') }}"
                                             alt="Images"></figure>
                                     <!-- Start overlay -->
                                     <div class="overlay">
@@ -400,7 +403,8 @@
                                 <div class="col-md-6 col-sm-6">
                                     <div class="donator">
                                         <div class="img-holder">
-                                            <figure><img src="{{ Storage::url($topDonor->userDetails->profile_img) }}"
+                                            <figure><img
+                                                    src="{{ $topDonor->userDetails && $topDonor->userDetails->profile_img ? Storage::url($topDonor->userDetails->profile_img) : asset('images/blankprofile.webp') }}"
                                                     style="width: 100px; height: 100px; border-radius: 50%; object-fit: cover;"
                                                     alt="Images"></figure>
                                         </div>

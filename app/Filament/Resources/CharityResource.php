@@ -32,7 +32,7 @@ class CharityResource extends Resource
                     ->required()
                     ->columnSpanFull()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('description')
+                Forms\Components\RichEditor::make('description')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('contact_email')
@@ -82,6 +82,7 @@ class CharityResource extends Resource
                     ]),
                 Tables\Columns\TextColumn::make('creator.name')
                     ->sortable(),
+                Tables\Columns\ImageColumn::make('logo'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

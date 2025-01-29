@@ -53,9 +53,10 @@
                                     </div>
                                 </div>
                                 <!-- /progress-item -->
-                                <h4 style="padding-top: 20px;">{{ $campaign->title }}</a>
+                                <h4 style="padding-top: 20px; font-weight: bold"">{{ $campaign->title }}</a>
                                     </h3>
-                                    <p>{{ $campaign->description }}</p>
+                                    <p style="padding-bottom: 2px">Start Date: {{ $campaign->start_date }}</p>
+                                    <p style="padding-top: 2px">End Date: {{ $campaign->end_date }}</p>
                                     <a href="{{ route('singleCauses', $campaign->id) }}">Donate now</a>
                             </div>
                         </div>

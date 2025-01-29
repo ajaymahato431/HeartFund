@@ -33,7 +33,7 @@ class CampaignResource extends Resource
                 Forms\Components\TextInput::make('title')
                     ->required()
                     ->maxLength(255),
-                Forms\Components\Textarea::make('description')
+                Forms\Components\RichEditor::make('description')
                     ->required()
                     ->columnSpanFull(),
                 Forms\Components\TextInput::make('goal_amt')
@@ -48,6 +48,9 @@ class CampaignResource extends Resource
                 Forms\Components\DatePicker::make('end_date')
                     ->required(),
                 Forms\Components\FileUpload::make('bank_qr')
+                    ->ImageEditor()
+                    ->default(null),
+                Forms\Components\FileUpload::make('featured_img')
                     ->ImageEditor()
                     ->default(null),
                 Forms\Components\Select::make('status')
@@ -87,6 +90,7 @@ class CampaignResource extends Resource
                         'completed' => 'Completed',
                         'cancelled' => 'Cancelled'
                     ]),
+                Tables\Columns\ImageColumn::make('featured_img'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

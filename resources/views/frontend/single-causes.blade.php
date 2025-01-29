@@ -1,11 +1,23 @@
 <x-frontend.layout>
     <!--Start slider-section-->
-    <section class="slider-section" style="background-image:url({{ asset('images/slider/2.jpg') }});">
+    <section class="slider-section"
+        style="background-image:url({{ Storage::url($campaign->featured_img) }}); position: relative;">
+        <div
+            style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+    ">
+        </div>
         <div class="container">
             <div class="slider">
                 <div class="text team-light">
-                    <h2>our <span>recent</span>causes</h2>
-                    <p><a href="{{ route('index') }}">Home</a> <i class="fa fa-angle-right" aria-hidden="true"></i> Causes
+                    <h2> {{ $campaign->title }}</span></h2>
+                    <p><a href="{{ route('index') }}">Home</a> <i class="fa fa-angle-right" aria-hidden="true"></i>
+                        Causes
                     </p>
                 </div>
             </div>
@@ -20,7 +32,7 @@
                     <!-- Start single-item -->
                     <div class="causes-item">
                         <div class="img-holder">
-                            <figure style="text-align: center"><img src="{{ Storage::url($campaign->charity->logo) }}"
+                            <figure style="text-align: center"><img src="{{ Storage::url($campaign->featured_img) }}"
                                     style="height: 500px" alt="Images">
                             </figure>
                             <h5><i class="fa fa-user" aria-hidden="true"></i>By
@@ -30,7 +42,8 @@
                         </div>
                         <div class="clearfix text text-bg">
                             <h2>{{ $campaign->title }}</h2>
-                            <h4 style="font-weight: bolder">{{ $campaign->charity->name }}</h4>
+                            <h4 style="font-weight: bolder">{{ $campaign->start_date }} to {{ $campaign->end_date }}
+                            </h4>
 
                             <div class="pro-text">
                                 <h4>${{ $campaign->raised_amt }}</h4>
@@ -54,9 +67,25 @@
                             <!-- /progress-item -->
 
                             <h4 style="font-weight: bolder; margin-top: 40px;">Campaing Description:</h4>
-                            <p>{{ $campaign->description }}</p>
+                            <p>{!! $campaign->description !!}</p>
+
+                            {{-- <h2 style="font-weight: bolder; margin-top: 40px;">About Charity:</h2> --}}
+                            <h3 style="text-align: center; margin-top: 60px;">{{ $campaign->charity->name }}</h3>
+                            <div class="img-holder">
+                                <figure style="text-align: center"><img
+                                        src="{{ Storage::url($campaign->charity->logo) }}" style="height: 300px"
+                                        alt="Images">
+                                </figure>
+                            </div>
                             <h4 style="font-weight: bolder; margin-top: 40px;">Charity Description:</h4>
-                            <p>{{ $campaign->charity->description }}</p>
+                            <p>{!! $campaign->charity->description !!}</p>
+
+                            <h4 style="font-weight: bolder; margin-top: 20px;">Contact Informatio:</h4>
+                            <p>Cotact Phone: {{ $campaign->charity->contact_phone }}</p>
+                            <p>Cotact Email: {{ $campaign->charity->contact_email }}</p>
+                            <p>Website: <a href="{{ $campaign->charity->website_url }}"
+                                    target="_blank">{{ $campaign->charity->website_url }}</a>
+                            </p>
 
                             <h4 style="font-weight: bolder; margin-top: 40px;">Donation QR Code:</h4>
                             <div class="img-holder">
@@ -91,7 +120,8 @@
                                             <!-- Payment Method Selection -->
                                             <div class="form-group">
                                                 <select name="payment_method" required="">
-                                                    <option value="" disabled selected>Choose Payment Method
+                                                    <option value="" disabled selected>Choose Payment
+                                                        Method
                                                     </option>
                                                     <option value="card"
                                                         {{ old('payment_method') == 'card' ? 'selected' : '' }}>
@@ -104,13 +134,15 @@
                                                         {{ old('payment_method') == 'cash' ? 'selected' : '' }}>
                                                         Cash</option>
                                                     <option value="esewa"
-                                                        {{ old('payment_method') == 'esewa' ? 'selected' : '' }}>eSewa
+                                                        {{ old('payment_method') == 'esewa' ? 'selected' : '' }}>
+                                                        eSewa
                                                     </option>
                                                     <option value="khalti"
                                                         {{ old('payment_method') == 'khalti' ? 'selected' : '' }}>
                                                         Khalti</option>
                                                     <option value="imepay"
-                                                        {{ old('payment_method') == 'imepay' ? 'selected' : '' }}>IME
+                                                        {{ old('payment_method') == 'imepay' ? 'selected' : '' }}>
+                                                        IME
                                                         Pay</option>
                                                 </select>
                                                 @error('payment_method')
@@ -120,7 +152,8 @@
 
                                             <!-- Transaction Proof Upload -->
                                             <div class="form-group">
-                                                <label for="transaction_proof">Transaction Proof (optional)</label>
+                                                <label for="transaction_proof">Transaction Proof
+                                                    (optional)</label>
                                                 <input type="file" name="transaction_proof" id="transaction_proof"
                                                     accept="image/*,application/pdf">
                                                 @error('transaction_proof')
