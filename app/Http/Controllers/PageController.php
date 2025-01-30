@@ -18,7 +18,11 @@ class PageController extends Controller
 
     public function causes()
     {
-        $campaigns = Campaign::where('status', 'active')->paginate(6);
+        $campaigns = Campaign::where('status', 'active')
+            ->whereHas('charity', function ($query) {
+                $query->where('status', 'active');
+            })
+            ->paginate(6);
         return view('frontend.causes', compact('campaigns'));
     }
 
@@ -38,7 +42,8 @@ class PageController extends Controller
 
     public function donators()
     {
-        $donators = User::latest()->with('donations')->paginate(12);
+        $donators = User::withSum('donations', 'amount')
+            ->orderBy('donations_sum_amount', 'desc')->paginate(12);
         return view('frontend.donators', compact('donators'));
     }
 

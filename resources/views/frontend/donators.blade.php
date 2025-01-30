@@ -24,6 +24,15 @@
                                     <figure><img src="{{ Storage::url($donator->userDetails->profile_img) }}"
                                             alt="Images">
                                     </figure>
+
+                                    <!-- Start overlay -->
+                                    <div class="overlay"
+                                        style="display: flex; justify-content: center; align-items:end; color: white;">
+                                        <h4 style="color: white; font-weight: bold;">Donated:
+                                            <br>{{ $donator->donations_sum_amount }}
+                                        </h4>
+                                    </div>
+                                    <!-- End overlay -->
                                 </div>
                                 <div class="text">
                                     <h4><a>{{ $donator->name }}</a></h4>

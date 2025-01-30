@@ -217,7 +217,7 @@
                         <div class="welcome-item">
                             <div class="img-holder">
                                 <figure><a href="{{ route('singleCauses', $campaign->id) }}"><img
-                                            src="{{ Storage::url($campaign->charity->logo) }}" alt="Images"></a>
+                                            src="{{ Storage::url($campaign->featured_img) }}" alt="Images"></a>
                                 </figure>
 
                                 <!-- Start overlay -->
@@ -418,7 +418,7 @@
                             @endforeach
                         </div>
 
-                        <a href="#" class="btn-2">View all</a>
+                        <a href="{{ route('donators') }}" class="btn-2">View all</a>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 winning">

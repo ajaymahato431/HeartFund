@@ -28,7 +28,9 @@ class CampaignResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Select::make('charity_id')
-                    ->relationship('charity', 'name')
+                    ->relationship('charity', 'name', function (Builder $query) {
+                        $query->where('status', 'active');
+                    })
                     ->required(),
                 Forms\Components\TextInput::make('title')
                     ->required()
@@ -67,6 +69,12 @@ class CampaignResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
+            ->query(function () {
+                return Campaign::query()
+                    ->whereHas('charity', function (Builder $query) {
+                        $query->where('status', 'active');
+                    });
+            })
             ->columns([
                 Tables\Columns\TextColumn::make('charity.name')
                     ->sortable(),

@@ -22,7 +22,7 @@
                         <div class="welcome-item hvr-float-shadow">
                             <div class="img-holder">
                                 <figure><a href="{{ route('singleCauses', $campaign->id) }}"><img
-                                            src="{{ Storage::url($campaign->charity->logo) }}" alt="Images"></a>
+                                            src="{{ Storage::url($campaign->featured_img) }}" alt="Images"></a>
                                 </figure>
                                 <!-- Start overlay -->
                                 <div class="overlay">
