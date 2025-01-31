@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Widgets\StatsOverview;
+use App\Filament\Widgets\DonatioTableWidget;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -29,6 +31,7 @@ class AdminPanelProvider extends PanelProvider
             ->authGuard('admins')
             ->login()
             ->profile()
+            ->sidebarCollapsibleOnDesktop()
             ->brandLogo(asset('images/logo.png'))
             ->brandLogoHeight('50px')
             ->favicon(asset('images/favicon/favicon-32x32.png'))
@@ -47,8 +50,8 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
+                StatsOverview::class,
+                DonatioTableWidget::class,
             ])
             ->middleware([
                 EncryptCookies::class,

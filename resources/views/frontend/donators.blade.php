@@ -4,7 +4,7 @@
         <div class="container">
             <div class="slider">
                 <div class="text team-light">
-                    <h2>our <span>dedicated</span> team</h2>
+                    <h2>our <span>Donators</span></h2>
                     <p><a href="index-2.html">Home</a> <i class="fa fa-angle-right" aria-hidden="true"></i> Team</p>
                 </div>
             </div>
@@ -36,7 +36,7 @@
                                 </div>
                                 <div class="text">
                                     <h4><a>{{ $donator->name }}</a></h4>
-                                    <p>volunteer</p>
+                                    <p>{{ $donator->userDetails->country }}</p>
                                 </div>
                             </div>
                             <!-- End single-item -->
