@@ -15,18 +15,25 @@
     <!--.welcome-seciton-->
     <section class="welcome-seciton page-causes">
         <div class="container">
-            <div class="row">
-                @foreach ($campaigns as $campaign)
+            <div class="container">
+                @foreach ($campaigns as $index => $campaign)
+                    @if ($index % 4 == 0)
+                        <div class="row"> <!-- Start new row every 4 items -->
+                    @endif
+
                     <div class="col-md-3 col-sm-6 col-xs-12">
                         <!-- Start single-item -->
                         <div class="welcome-item hvr-float-shadow">
                             <div class="img-holder">
-                                <figure><a href="{{ route('singleCauses', $campaign->id) }}"><img
-                                            src="{{ Storage::url($campaign->featured_img) }}" alt="Images"></a>
+                                <figure>
+                                    <a href="{{ route('singleCauses', $campaign->id) }}">
+                                        <img src="{{ Storage::url($campaign->featured_img) }}" alt="Images">
+                                    </a>
                                 </figure>
                                 <!-- Start overlay -->
                                 <div class="overlay">
-                                    <h4><a
+                                    <h4>
+                                        <a
                                             href="{{ route('singleCauses', $campaign->id) }}">{{ $campaign->charity->name }}</a>
                                     </h4>
                                 </div>
@@ -53,20 +60,24 @@
                                     </div>
                                 </div>
                                 <!-- /progress-item -->
-                                <h4 style="padding-top: 20px; font-weight: bold"">{{ $campaign->title }}</a>
-                                    </h3>
-                                    <p style="padding-bottom: 2px">Start Date: {{ $campaign->start_date }}</p>
-                                    <p style="padding-top: 2px">End Date: {{ $campaign->end_date }}</p>
-                                    <a href="{{ route('singleCauses', $campaign->id) }}">Donate now</a>
+                                <h4 style="padding-top: 20px; font-weight: bold">{{ $campaign->title }}</h4>
+                                <p style="padding-bottom: 2px">Start Date: {{ $campaign->start_date }}</p>
+                                <p style="padding-top: 2px">End Date: {{ $campaign->end_date }}</p>
+                                <a href="{{ route('singleCauses', $campaign->id) }}">Donate now</a>
                             </div>
                         </div>
                         <!-- End single-item -->
                     </div>
-                @endforeach
-            </div>
-            <div class="page-list">
-                {{ $campaigns->links() }}
-            </div>
+
+                    @if ($index % 4 == 3 || $loop->last)
+            </div> <!-- Close row after 4 items or at the last item -->
+            @endif
+            @endforeach
+        </div>
+
+        <div class="page-list">
+            {{ $campaigns->links() }}
+        </div>
         </div>
     </section>
     <!--/wellcome-seciton-->

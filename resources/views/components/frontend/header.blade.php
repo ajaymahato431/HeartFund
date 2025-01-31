@@ -151,13 +151,18 @@
             <div class="signup">
                 <ul>
                     @auth
+                        <li>
+                            <a href="{{ route('dashboard') }}" style="margin-right: 15px; font-size: 14px;">
+                                <i class="fa fa-home" aria-hidden="true"></i> Dashboard
+                            </a>
+                        </li>
                         <!-- Show Logout Button if Authenticated -->
                         <li>
                             <form action="{{ route('logout') }}" method="POST" style="display: inline;">
                                 @csrf
                                 <button type="submit"
                                     style="background: none; border: none; color: inherit; cursor: pointer; padding: 0; font: inherit;">
-                                    <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+                                    <i class="fa fa-sign-out" aria-hidden="true"></i> LOG OUT
                                 </button>
                             </form>
                         </li>

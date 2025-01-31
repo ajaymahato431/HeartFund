@@ -22,7 +22,7 @@ class PageController extends Controller
             ->whereHas('charity', function ($query) {
                 $query->where('status', 'active');
             })
-            ->paginate(6);
+            ->paginate(8);
         return view('frontend.causes', compact('campaigns'));
     }
 
