@@ -725,6 +725,8 @@ class ComposerStaticInit626b9e7ddd47fb7eff9aaa53cce0c9ad
         'App\\Filament\\Resources\\VolunteerResource\\Pages\\EditVolunteer' => __DIR__ . '/../..' . '/app/Filament/Resources/VolunteerResource/Pages/EditVolunteer.php',
         'App\\Filament\\Resources\\VolunteerResource\\Pages\\ListVolunteers' => __DIR__ . '/../..' . '/app/Filament/Resources/VolunteerResource/Pages/ListVolunteers.php',
         'App\\Filament\\Resources\\VolunteerResource\\Pages\\ViewVolunteer' => __DIR__ . '/../..' . '/app/Filament/Resources/VolunteerResource/Pages/ViewVolunteer.php',
+        'App\\Filament\\Widgets\\DonatioTableWidget' => __DIR__ . '/../..' . '/app/Filament/Widgets/DonatioTableWidget.php',
+        'App\\Filament\\Widgets\\StatsOverview' => __DIR__ . '/../..' . '/app/Filament/Widgets/StatsOverview.php',
         'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
         'App\\Http\\Controllers\\Auth\\ConfirmablePasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ConfirmablePasswordController.php',
         'App\\Http\\Controllers\\Auth\\EmailVerificationNotificationController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/EmailVerificationNotificationController.php',

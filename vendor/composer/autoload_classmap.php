@@ -52,6 +52,8 @@ return array(
     'App\\Filament\\Resources\\VolunteerResource\\Pages\\EditVolunteer' => $baseDir . '/app/Filament/Resources/VolunteerResource/Pages/EditVolunteer.php',
     'App\\Filament\\Resources\\VolunteerResource\\Pages\\ListVolunteers' => $baseDir . '/app/Filament/Resources/VolunteerResource/Pages/ListVolunteers.php',
     'App\\Filament\\Resources\\VolunteerResource\\Pages\\ViewVolunteer' => $baseDir . '/app/Filament/Resources/VolunteerResource/Pages/ViewVolunteer.php',
+    'App\\Filament\\Widgets\\DonatioTableWidget' => $baseDir . '/app/Filament/Widgets/DonatioTableWidget.php',
+    'App\\Filament\\Widgets\\StatsOverview' => $baseDir . '/app/Filament/Widgets/StatsOverview.php',
     'App\\Http\\Controllers\\Auth\\AuthenticatedSessionController' => $baseDir . '/app/Http/Controllers/Auth/AuthenticatedSessionController.php',
     'App\\Http\\Controllers\\Auth\\ConfirmablePasswordController' => $baseDir . '/app/Http/Controllers/Auth/ConfirmablePasswordController.php',
     'App\\Http\\Controllers\\Auth\\EmailVerificationNotificationController' => $baseDir . '/app/Http/Controllers/Auth/EmailVerificationNotificationController.php',

@@ -2298,17 +2298,17 @@
         },
         {
             "name": "laravel/breeze",
-            "version": "v2.3.2",
-            "version_normalized": "2.3.2.0",
+            "version": "v2.3.3",
+            "version_normalized": "2.3.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/breeze.git",
-                "reference": "2a4764055792b14e0e571a710adbda9c9eb300d4"
+                "reference": "c40f7fce4fd80e39c7f4317697eeba21d2344003"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/breeze/zipball/2a4764055792b14e0e571a710adbda9c9eb300d4",
-                "reference": "2a4764055792b14e0e571a710adbda9c9eb300d4",
+                "url": "https://api.github.com/repos/laravel/breeze/zipball/c40f7fce4fd80e39c7f4317697eeba21d2344003",
+                "reference": "c40f7fce4fd80e39c7f4317697eeba21d2344003",
                 "shasum": ""
             },
             "require": {
@@ -2324,7 +2324,7 @@
                 "orchestra/testbench-core": "^9.0",
                 "phpstan/phpstan": "^2.0"
             },
-            "time": "2025-01-21T14:57:42+00:00",
+            "time": "2025-01-26T19:08:50+00:00",
             "type": "library",
             "extra": {
                 "laravel": {
@@ -10302,7 +10302,6 @@
         "fakerphp/faker",
         "filp/whoops",
         "hamcrest/hamcrest-php",
-        "laravel/breeze",
         "laravel/pail",
         "laravel/pint",
         "laravel/sail",
