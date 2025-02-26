@@ -29,7 +29,7 @@ class ProfileUpdateRequest extends FormRequest
             'address' => 'required|string|max:255',
             'country' => 'required|string|max:100',
             'blood_group' => 'required|string|max:3',
-            'profile_img' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            'profile_img' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ];
     }
 }
